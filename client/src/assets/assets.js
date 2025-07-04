@@ -28,6 +28,8 @@ import seek from './seek.svg'
 import search from './search.svg'
 import statistics from './statistics.svg'
 import road1 from './road1.svg'
+import road5 from './road5.svg'
+import user1 from './user1.svg'
 
 const assets = {
     avatar_icon,
@@ -49,7 +51,9 @@ const assets = {
     seek,
     search, 
     statistics,
-    road1
+    road1,
+    road5,
+    user1
    
 }
 

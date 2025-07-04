@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import assets from "../assets/assets";
+import assets, { userDummyData } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ selectedUser, setSelectedUser }) => {
@@ -34,12 +34,31 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
             </div>
           </div>
         </div>
-              <div className="bg-[#eff1ed] rounded-full flex items-center gap-2 py-3 px-4
-              mt-5">
-                  <img src={assets.search} alt="Search" className="w-7.5 scale-x-[-1]" />
-                  <input type="text" className="bg-transparent border-none outline-none 
-                  text-white text-xs placeholder-[#283845] flex-1" placeholder="Search Friends"/>
+        <div
+          className="bg-[#eff1ed] rounded-full flex items-center gap-2 py-3 px-4
+              mt-5"
+        >
+          <img
+            src={assets.search}
+            alt="Search"
+            className="w-7.5 scale-x-[-1]"
+          />
+          <input
+            type="text"
+            className="bg-transparent border-none outline-none 
+                  text-white text-xs placeholder-[#283845] flex-1"
+            placeholder="Search Friends..."
+          />
         </div>
+      </div>
+          <div className="flex flex-col">
+              {userDummyData.map((user, index) => (
+                  <div>
+                      <img src={user?.profilePic || assets.user} alt=""
+                          className="w-[35px] aspect-[1/1] rounded-full" />
+                      
+                  </div>
+              ))}
       </div>
     </div>
   );
