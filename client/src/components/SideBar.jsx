@@ -12,7 +12,7 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
     >
       <div className="pb-5">
         <div className="flex justify-between items-center">
-          <img src={assets.road} alt="logo" className="max-w-40" />
+          <img src={assets.road1} alt="logo" className="max-w-40" />
           <div className="relative py-2 group">
             <img
               src={assets.menu_icon}
@@ -34,8 +34,11 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
             </div>
           </div>
         </div>
-              <div>
-                  <img src={assets.search} alt="Search"  className="max-w-11 scale-x-[-1]"/>
+              <div className="bg-[#eff1ed] rounded-full flex items-center gap-2 py-3 px-4
+              mt-5">
+                  <img src={assets.search} alt="Search" className="w-7.5 scale-x-[-1]" />
+                  <input type="text" className="bg-transparent border-none outline-none 
+                  text-white text-xs placeholder-[#283845] flex-1" placeholder="Search Friends"/>
         </div>
       </div>
     </div>
