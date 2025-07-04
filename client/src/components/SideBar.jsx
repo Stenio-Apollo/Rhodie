@@ -46,7 +46,7 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
           <input
             type="text"
             className="bg-transparent border-none outline-none 
-                  text-white text-xs placeholder-[#283845] flex-1"
+                  text-black text-xs placeholder-[#283845] flex-1"
             placeholder="Search Friends..."
           />
         </div>
@@ -56,6 +56,14 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
                   <div>
                       <img src={user?.profilePic || assets.user} alt=""
                           className="w-[35px] aspect-[1/1] rounded-full" />
+                      <div className="flex flex-col leading-5">
+                          <p>{user.fullName}</p>
+                          {
+                              index < 3 
+                                  ? <span className="text-[#4ecdc4] text-xs">Online</span>
+                                  : <span className="text-[#f5dfbb] text-xs">Offline</span>
+                          }
+                      </div>
                       
                   </div>
               ))}
