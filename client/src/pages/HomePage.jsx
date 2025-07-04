@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React, { useState } from "react";
 import SideBar from "../components/SideBar";
 import ChatContainer from "../components/ChatContainer";
@@ -18,9 +18,9 @@ const HomePage = () => {
           }
            `}
       >
-        <SideBar />
-        <ChatContainer />
-        <RightSideBar />
+        <SideBar selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
+        <ChatContainer selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+        <RightSideBar selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
     >
       <div className="pb-5">
         <div className="flex justify-between items-center">
-          <img src={assets.road1} alt="logo" className="max-w-40" />
+          <img src={assets.road5} alt="logo" className="max-w-40" />
           <div className="relative py-2 group">
             <img
               src={assets.menu_icon}
@@ -51,22 +51,40 @@ const SideBar = ({ selectedUser, setSelectedUser }) => {
           />
         </div>
       </div>
-          <div className="flex flex-col">
-              {userDummyData.map((user, index) => (
-                  <div>
-                      <img src={user?.profilePic || assets.user} alt=""
-                          className="w-[35px] aspect-[1/1] rounded-full" />
-                      <div className="flex flex-col leading-5">
-                          <p>{user.fullName}</p>
-                          {
-                              index < 3 
-                                  ? <span className="text-[#4ecdc4] text-xs">Online</span>
-                                  : <span className="text-[#f5dfbb] text-xs">Offline</span>
-                          }
-                      </div>
-                      
-                  </div>
-              ))}
+      <div className="flex flex-col">
+        {userDummyData.map((user, index) => (
+          <div
+            onClick={()=> {
+              setSelectedUser(user);
+            }}
+            key={index}
+            className={`relative flex items center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${
+              selectedUser?._id === user._id && "bg-[#fdf0d5]"
+            }`}
+          >
+            <img
+              src={user?.profilePic || assets.user}
+              alt=""
+              className="w-[35px] aspect-[1/1] rounded-full"
+            />
+            <div className="flex flex-col leading-5">
+              <p>{user.fullName}</p>
+              {index < 3 ? (
+                <span className="text-[#283845] text-xs">Online</span>
+              ) : (
+                <span className="text-[#ad2831] text-xs">Offline</span>
+              )}
+            </div>
+            {index > 2 && (
+              <p
+                className="absolute top-4 right-4 text-xs
+                      h-5 w-5 flex justify-center items-center rounded-full bg-[#ad2831]"
+              >
+                {index}
+              </p>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
