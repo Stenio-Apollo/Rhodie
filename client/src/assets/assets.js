@@ -24,6 +24,9 @@ import img2 from './img2.jpg'
 import june from './june.svg'
 import roads from './roads.png'
 import road from './road.svg'
+import seek from './seek.svg'
+import search from './search.svg'
+import statistics from './statistics.svg'
 
 const assets = {
     avatar_icon,
@@ -41,7 +44,10 @@ const assets = {
     profile_martin,
     june,
     roads,
-    road
+    road, 
+    seek,
+    search, 
+    statistics,
    
 }
 
